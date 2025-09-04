@@ -32,14 +32,6 @@
 ## 🌟 What Makes Baam Injector Special?
 
 **Baam Injector** is an enhanced fork of the excellent [Fluffy Injector](https://github.com/fluffysnaff/fluffy-injector) with significant improvements and new features. Built entirely in Rust, it provides a safe, efficient, and beautiful way to perform DLL injection with a focus on user experience.
-
-### 🎨 **5 Stunning Themes**
-- 🌸 **Pink Puff** - Cute & soft pink colors for kawaii vibes
-- 💜 **Purple Vibes** - Y2K aesthetic with lavender & cyber purple
-- 🌆 **Cyberpunk** - Dark theme with neon cyan & magenta accents  
-- 🔋 **Matrix** - Pure black background with green terminal vibes
-- 🌈 **Retro Wave** - 80s synthwave with purple gradients & hot pink
-
 ---
 
 ## 📸 Screenshots
@@ -47,14 +39,6 @@
 <div align="center">
 
 <img width="801" height="599" alt="image" src="https://github.com/user-attachments/assets/06e02386-f2ab-4b52-b3b5-82ddb531f2ca" />
-
-| Theme | Preview |
-|-------|---------|
-| 🌸 Pink Puff | *Sweet and adorable pink interface* |
-| 💜 Purple Vibes | *Y2K aesthetic with cyber elements* |
-| 🌆 Cyberpunk | *Dark futuristic neon experience* |
-| 🔋 Matrix | *Minimalist hacker terminal style* |
-| 🌈 Retro Wave | *80s synthwave nostalgia* |
 
 </div>
 
