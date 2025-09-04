@@ -1,0 +1,36 @@
+name: Rust Auto Builder
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: x86_64-pc-windows-msvc
+          override: true
+
+      - name: Build Release
+        run: cargo build --release --verbose
+        
+      - name: List release directory
+        run: dir target\release
+  
+      - name: Upload Release Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-build
+          path: target/release/injector.exe
