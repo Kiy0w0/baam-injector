@@ -27,13 +27,6 @@
 > 
 > **Use responsibly and ethically.** The author is not responsible for any damage or consequences resulting from misuse.
 
----
-
-## 🌟 What Makes Baam Injector Special?
-
-**Baam Injector** is an enhanced fork of the excellent [Fluffy Injector](https://github.com/fluffysnaff/fluffy-injector) with significant improvements and new features. Built entirely in Rust, it provides a safe, efficient, and beautiful way to perform DLL injection with a focus on user experience.
----
-
 ## 📸 Screenshots
 
 <div align="center">
