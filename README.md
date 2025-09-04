@@ -46,6 +46,8 @@
 
 <div align="center">
 
+<img width="801" height="599" alt="image" src="https://github.com/user-attachments/assets/06e02386-f2ab-4b52-b3b5-82ddb531f2ca" />
+
 | Theme | Preview |
 |-------|---------|
 | 🌸 Pink Puff | *Sweet and adorable pink interface* |
