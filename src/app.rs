@@ -1,4 +1,4 @@
-use crate::core::{discord_rpc, icon_loader, process_scanner};
+use crate::core::{icon_loader, process_scanner};
 use crate::models::config::Config;
 use crate::models::dll_manager::DLLManager;
 use crate::models::process::ProcessInfo;
@@ -33,8 +33,6 @@ pub struct InjectorApp {
     // Theme system
     pub current_theme: Theme,
 
-    // Discord RPC
-    pub discord_rpc: discord_rpc::DiscordRpc,
 
     // Private fields
     background_rx: Receiver<BackgroundMessage>,
@@ -65,11 +63,6 @@ impl InjectorApp {
             icon_loader::load_loop(icon_rx, icon_bgtx, ctx_clone);
         });
 
-        let discord_rpc = discord_rpc::DiscordRpc::new();
-        // Temporarily disable Discord RPC to fix freeze issue
-        // if let Err(_) = discord_rpc.connect() {
-        //     // Discord not available, continue without RPC
-        // }
 
         let current_theme = Theme::from_type(config.selected_theme);
 
@@ -88,7 +81,6 @@ impl InjectorApp {
             toasts: Vec::new(),
             process_search: String::new(),
             current_theme,
-            discord_rpc,
         };
 
         app.load_default_dll_icon(&cc.egui_ctx);
@@ -150,17 +142,6 @@ impl InjectorApp {
         self.toasts.push(Toast::new(level, message));
     }
 
-    pub fn update_discord_rpc(&mut self) {
-        // Temporarily disabled to fix freeze issue
-        // let process_name = self.selected_process_name().map(|s| s.to_string());
-        // let process_name_ref = process_name.as_deref();
-        // self.discord_rpc.update_with_process(process_name_ref);
-    }
-
-    pub fn notify_injection(&mut self, _success: bool, _process_name: &str) {
-        // Temporarily disabled to fix freeze issue
-        // self.discord_rpc.update_injection_status(success, process_name);
-    }
 
     pub fn set_theme(&mut self, theme_type: ThemeType) {
         self.config.selected_theme = theme_type;
@@ -197,7 +178,6 @@ impl eframe::App for InjectorApp {
     }
 
     fn on_exit(&mut self, _gl: Option<&eframe::glow::Context>) {
-        // Graceful shutdown - disconnect Discord RPC (temporarily disabled)
-        // self.discord_rpc.disconnect();
+        // Graceful shutdown
     }
 }

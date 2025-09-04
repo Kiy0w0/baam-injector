@@ -4,7 +4,7 @@
 
 ![Baam Injector Logo](assets/icon.png)
 
-**A modern, feature-rich Rust DLL injector with a beautiful customizable GUI featuring 5 stunning themes**
+**A modern, feature-rich Rust DLL injector with beautiful customizable GUI featuring 5 stunning themes**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Made with Rust](https://img.shields.io/badge/Made%20with-Rust-orange.svg?style=for-the-badge&logo=rust)](https://www.rust-lang.org/)
@@ -27,32 +27,13 @@
 > 
 > **Use responsibly and ethically.** The author is not responsible for any damage or consequences resulting from misuse.
 
----
 
-## 🌟 What Makes Baam Injector Special?
-
-**Baam Injector** is an enhanced fork of the excellent [Fluffy Injector](https://github.com/fluffysnaff/fluffy-injector) with significant improvements and new features. Built entirely in Rust, it provides a safe, efficient, and beautiful way to perform DLL injection with a focus on user experience.
-
-### 🎨 **5 Stunning Themes**
-- 🌸 **Pink Puff** - Cute & soft pink colors for kawaii vibes
-- 💜 **Purple Vibes** - Y2K aesthetic with lavender & cyber purple
-- 🌆 **Cyberpunk** - Dark theme with neon cyan & magenta accents  
-- 🔋 **Matrix** - Pure black background with green terminal vibes
-- 🌈 **Retro Wave** - 80s synthwave with purple gradients & hot pink
-
----
 
 ## 📸 Screenshots
 
 <div align="center">
 
-| Theme | Preview |
-|-------|---------|
-| 🌸 Pink Puff | *Sweet and adorable pink interface* |
-| 💜 Purple Vibes | *Y2K aesthetic with cyber elements* |
-| 🌆 Cyberpunk | *Dark futuristic neon experience* |
-| 🔋 Matrix | *Minimalist hacker terminal style* |
-| 🌈 Retro Wave | *80s synthwave nostalgia* |
+<img width="801" height="599" alt="image" src="https://github.com/user-attachments/assets/06e02386-f2ab-4b52-b3b5-82ddb531f2ca" />
 
 </div>
 
@@ -98,6 +79,7 @@
 - **Error Prevention** and validation
 
 ---
+
 
 ## 🚀 Getting Started
 
@@ -147,32 +129,10 @@ Built with modern Rust ecosystem:
 | **serde & serde_json** | Configuration serialization | 1.0 |
 | **image** | Icon processing | 0.24 |
 | **anyhow** | Error handling | 1.0 |
+| **webbrowser** | GitHub link integration | 0.8 |
 
----
 
-## 🎯 Theme System Architecture
 
-```mermaid
-graph TD
-    A[Theme System] --> B[5 Theme Types]
-    A --> C[Dynamic Application]
-    A --> D[Config Persistence]
-    
-    B --> B1[Pink Puff 🌸]
-    B --> B2[Purple Vibes 💜]
-    B --> B3[Cyberpunk 🌆]
-    B --> B4[Matrix 🔋]
-    B --> B5[Retro Wave 🌈]
-    
-    C --> C1[Real-time Color Updates]
-    C --> C2[UI Element Theming]
-    C --> C3[Border & Rounding]
-    
-    D --> D1[JSON Config File]
-    D --> D2[Session Memory]
-```
-
----
 
 ## 📊 Performance & Safety
 
@@ -217,6 +177,7 @@ Special thanks to the original author for creating the solid foundation that mad
 
 ### Key Enhancements in Baam Injector
 - 🎨 Complete theme system with 5 unique themes
+- 🔗 **NEW:** GitHub repository integration and link
 - 🎯 Enhanced UI/UX with modern design patterns
 - 🔧 Improved error handling and stability
 - 💾 Enhanced configuration management
@@ -226,6 +187,28 @@ Special thanks to the original author for creating the solid foundation that mad
 - **egui** team for the amazing immediate-mode GUI framework
 - **Microsoft** for Windows API and development tools
 - **Rust community** for the incredible ecosystem
+
+---
+
+## 🚀 Latest Updates (v0.2.0)
+
+### 🎨 **UI/UX Improvements**
+- GitHub repository link integration
+- Enhanced theme system with better persistence
+- Improved visual feedback and notifications
+- Better configuration management
+
+### 🔧 **Technical Enhancements**
+- Simplified and more robust injection system
+- Error handling improvements
+- Code architecture refinements
+- Better memory safety
+
+### 🐛 **Bug Fixes**
+- Fixed borrowing conflicts in process selection
+- Resolved compilation warnings
+- Improved stability and reliability
+- Enhanced error messages
 
 ---
 

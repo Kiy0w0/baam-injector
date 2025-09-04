@@ -200,7 +200,6 @@ fn draw_process_panel(ui: &mut egui::Ui, app: &mut InjectorApp) {
     if let Some((pid, proc_name)) = process_selected {
         app.selected_process = Some(pid);
         app.config.last_selected_app = Some(proc_name);
-        app.update_discord_rpc(); // Update Discord RPC when process is selected
     }
     
     for error_msg in errors_to_toast {
@@ -321,15 +320,19 @@ fn draw_dll_panel(ui: &mut egui::Ui, app: &mut InjectorApp) {
                 .min_size(button_size);
             if ui.add_enabled(inject_enabled, inject_btn).clicked() {
                 if let (Some(pid), Some(dll_path)) = (app.selected_process, app.dll_manager.selected_path()) {
-                    let process_name = app.selected_process_name().unwrap_or("Unknown").to_string();
-                    match injector::inject_dll(pid, &dll_path) {
+                    let _process_name = app.selected_process_name().unwrap_or("Unknown").to_string();
+                    
+                    let result = injector::inject_dll(pid, &dll_path);
+                    
+                    match result {
                         Ok(_) => {
-                            app.add_toast(ToastLevel::Success, "◇ Injection successful! Welcome to the matrix! ◇");
-                            app.notify_injection(true, &process_name); // Update Discord RPC
+                            app.add_toast(
+                                ToastLevel::Success, 
+                                "◇ Standard injection successful! Welcome to the matrix! ◇"
+                            );
                         },
                         Err(e) => {
                             app.add_toast(ToastLevel::Error, format!("◇ Injection failed: {} ◇", e));
-                            app.notify_injection(false, &process_name); // Update Discord RPC
                         },
                     }
                 }
@@ -357,6 +360,37 @@ fn draw_dll_panel(ui: &mut egui::Ui, app: &mut InjectorApp) {
                 }
             }
         });
+        
+        // GitHub link section
+        ui.add_space(16.0);
+        ui.separator();
+        ui.add_space(8.0);
+        
+        ui.horizontal(|ui| {
+            ui.add_space(10.0);
+            let github_link = egui::Button::new(
+                RichText::new("🌟 GitHub Repository")
+                    .size(14.0)
+                    .color(app.current_theme.text_primary)
+            )
+            .fill(app.current_theme.accent_tertiary)
+            .stroke(Stroke::new(1.5, app.current_theme.accent_primary))
+            .rounding(Rounding::same(app.current_theme.rounding));
+            
+            if ui.add(github_link).clicked() {
+                if let Err(_) = webbrowser::open("https://github.com/Kiy0w0/baam-injector") {
+                    app.add_toast(ToastLevel::Error, "◇ Failed to open GitHub link ◇");
+                }
+            }
+            
+            ui.add_space(8.0);
+            ui.label(
+                RichText::new("Check for updates & report issues")
+                    .size(12.0)
+                    .color(app.current_theme.text_secondary)
+            );
+        });
+        
         ui.add_space(12.0);
     });
 }
