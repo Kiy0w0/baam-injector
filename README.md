@@ -27,8 +27,6 @@
 > 
 > **Use responsibly and ethically.** The author is not responsible for any damage or consequences resulting from misuse.
 
-
-
 ## 📸 Screenshots
 
 <div align="center">
